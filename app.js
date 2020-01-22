@@ -2,7 +2,6 @@ var app = angular.module("myapp", []);
 app.controller("HelloController", ["$rootScope", "$scope", "$http", function ($rootScope, $scope, $http) {
 
     // -----------------------------------------ANGULAR JS COAD---------------------------------------------------------
-
     $scope.listData = [];
 
     $scope.addDataDetails = (credentials) => {
@@ -33,5 +32,9 @@ app.controller("HelloController", ["$rootScope", "$scope", "$http", function ($r
         $scope.listData.splice($scope.index, 1);
         console.log("Deleted Sucessfully" + data)
     };
-    
+
+    $scope.editRowData = (data) => {
+        console.log("Data edited", data)
+    };
+
 }]);
