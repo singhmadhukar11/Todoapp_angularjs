@@ -16,18 +16,22 @@ app.controller("HelloController", ["$rootScope", "$scope", "$http", function ($r
             zip: credentials.zip
         };
         $scope.listData.push(dataDetails);
-        // $rootScope.$broadcast("saveData", dataDetails);
         clearField();
     };
 
     let clearField = () => {
-         $scope.credentials.email = '';
-         $scope.credentials.password = '';
-         $scope.credentials.address = '';
-         $scope.credentials.address2 = '';
-         $scope.credentials.city = '';
-         $scope.credentials.zip = '';
+        $scope.credentials.email = '';
+        $scope.credentials.password = '';
+        $scope.credentials.address = '';
+        $scope.credentials.address2 = '';
+        $scope.credentials.city = '';
+        $scope.credentials.zip = '';
     };
 
-
+    $scope.deleteRowData = (data) => {
+        $scope.index = $scope.listData.indexOf(data);
+        $scope.listData.splice($scope.index, 1);
+        console.log("Deleted Sucessfully" + data)
+    };
+    
 }]);
